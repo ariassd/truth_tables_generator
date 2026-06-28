@@ -1,6 +1,9 @@
-"use strict";
+interface HeaderProps {
+  dark: boolean;
+  onToggle: () => void;
+}
 
-const Header = ({ dark, onToggle }) => {
+export const Header = ({ dark, onToggle }: HeaderProps) => {
   return (
     <header>
       <div className="header-inner">

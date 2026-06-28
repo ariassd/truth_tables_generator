@@ -185,16 +185,28 @@ def evaluate(expresions, format="md"):
 
 # fmt: off
 expresions = [
-    "p -> q",
-    "p <-> q",
-    "(p∨¬q)→(¬p∧q)",
-    "((p & q) | (p & r)) >> t",
-    "(p & q) >> r",
-    "((p | q) & ~r) >> s",
-    "(((p & q) | (r & ~s)) >> (t | u)) & ((p >> r) | (q >> s))",
+    "(p → q) ∧ (¬r ∨ q)",
+    "(q → p) ∧ (r ∨ p)",
+    "¬(p ∨ ¬q) → (¬r ∧ p)",
+    "(¬p ∧ q) → (r ∧ p)",
+
+
+    # "¬(p → q) ∨ (q ∨ r)",
+    # "(p ∧ ¬q) ∨ (q ∨ r)",
+    # "(p ∨ ¬q) ∨ (q ∨ r)",
+    # "(p ∧ q) ∧ r",
+    # "(¬p ∧ q) ∨ (q ∨ r)",
+    # "¬p ∧ (q ∨ r)",
+    # "p -> q",
+    # "p <-> q",
+    # "(p∨¬q)→(¬p∧q)",
+    # "((p & q) | (p & r)) >> t",
+    # "(p & q) >> r",
+    # "((p | q) & ~r) >> s",
+    # "(((p & q) | (r & ~s)) >> (t | u)) & ((p >> r) | (q >> s))",
 
 ]
 # fmt: on
 
 if __name__ == "__main__":
-    evaluate(expresions, "md")
+    evaluate(expresions, "csv")

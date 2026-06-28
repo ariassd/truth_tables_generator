@@ -1,8 +1,12 @@
-"use strict";
+const SYMBOLS = ["¬", "∧", "∨", "→", "↔"] as const;
 
-const SYMBOLS = ["¬", "∧", "∨", "→", "↔"];
+type Symbol = (typeof SYMBOLS)[number];
 
-const SymbolBar = ({ onInsert }) => {
+interface SymbolBarProps {
+  onInsert: (symbol: Symbol) => void;
+}
+
+export const SymbolBar = ({ onInsert }: SymbolBarProps) => {
   return (
     <div className="symbols">
       <span>insert:</span>
