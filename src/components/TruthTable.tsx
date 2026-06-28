@@ -1,11 +1,18 @@
-"use strict";
+type Cell = string;
+type Row = Cell[];
 
-const TruthTable = ({ expression, headers, rows }) => {
+interface TruthTableProps {
+  expression: string;
+  headers: string[] | null | undefined;
+  rows: Row[];
+}
+
+export const TruthTable = ({ expression, headers, rows }: TruthTableProps) => {
   if (!headers) return null;
 
   const lastIdx = headers.length - 1;
 
-  const colClass = (header, idx) => {
+  const colClass = (header: string, idx: number): string => {
     if (idx === lastIdx) return "last-col";
     if (header.length <= 2 && /^[a-z]/.test(header)) return "var-col";
     return "";
